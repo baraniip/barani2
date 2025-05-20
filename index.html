@@ -1,1 +1,145 @@
- hi
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | TravelGo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    #bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(1.2); /* Brightens the video */
+    }
+
+    .form-container {
+      position: relative;
+      z-index: 1;
+      width: 360px;
+      padding: 40px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: none; /* No blur */
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #fff;
+      margin-bottom: 30px;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      background: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    .form-group label {
+      position: absolute;
+      left: 10px;
+      top: 12px;
+      color: #eee;
+      transition: 0.3s;
+      pointer-events: none;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -10px;
+      left: 5px;
+      font-size: 12px;
+      background: rgba(0,0,0,0.3);
+      padding: 2px 5px;
+      border-radius: 4px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: #00c6ff;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.4s;
+    }
+
+    .btn:hover {
+      background: #0072ff;
+      box-shadow: 0 0 15px #00c6ff;
+      transform: scale(1.05);
+    }
+
+    .switch {
+      margin-top: 20px;
+      text-align: center;
+      color: #eee;
+    }
+
+    .switch a {
+      color: #00c6ff;
+      text-decoration: none;
+    }
+
+    .switch a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline id="bg-video">
+    <source src="vd.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- Login Form -->
+  <div class="form-container">
+    <h2>Login to TravelGo</h2>
+    <div class="form-group">
+      <input type="email" required placeholder=" " />
+      <label>Email</label>
+    </div>
+    <div class="form-group">
+      <input type="password" required placeholder=" " />
+      <label>Password</label>
+    </div>
+    <button class="btn">Login</button>
+    <div class="switch">Don't have an account? <a href="signup.html">Sign Up</a></div>
+  </div>
+</body>
+</html>
